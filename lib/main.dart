@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:english_words/english_words.dart';
 
 void main() => runApp(new MyApp());
 
@@ -36,6 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final wordPair = new WordPair.random();
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(widget.title),
@@ -44,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            new Text(wordPair.asPascalCase),
             new Text(
               'You have pushed the button this many times:',
             ),
